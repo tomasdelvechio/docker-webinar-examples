@@ -36,3 +36,30 @@ docker run --help
 # Se ejecuta el container a partir de la imagen creada
 docker run webinar/ejemplo-1
 ```
+
+## Ejemplo 2
+
+Objetivo: Mostrar el ciclo de vida efimero de un contenedor.
+
+```bash
+# Ejecutar una consola dentro de un contenedor, en base a la distro alpine
+docker run -it alpine sh
+# Dentro del contenedor
+curl www.google.com
+# Error, entonces instalar curl
+apk add curl
+# Una vez que instala, ejecutar nuevamente curl
+curl www.google.com
+# exito! salir del contenedor
+exit
+```
+
+En este punto se genero un container, se instalo curl, y se recupero un sitio. ¿Que sucede si se intenta realizar el experimento nuevamente?
+
+```bash
+docker run -it alpine sh
+curl www.google.com
+exit
+# Revisar los contenedores
+docker ps -a | head -n 3
+```
