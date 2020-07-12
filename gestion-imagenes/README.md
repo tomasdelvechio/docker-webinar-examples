@@ -4,7 +4,7 @@ Un conjunto de ejemplos sobre como se manejan imagenes en Docker
 
 ## Ejemplo 1
 
-Ejecutar un script php con el CLI del lenguaje sin tenerlo instalado en el Host.
+Objetivo: Ejecutar un script php con el CLI del lenguaje sin tenerlo instalado en el Host. Para ello se creara una imagen que ejecute dicho contenedor.
 
 ```bash
 mkdir -p ~/workspace/webinar-docker/ejemplo-1/
