@@ -24,7 +24,7 @@ Luego ejecutar los siguientes comandos
 
 ```bash
 # Creacion de un script PHP
-echo "<?php echo 'Hola Mundo desde PHP';" > script.php
+echo "<?php echo 'Hola Mundo desde PHP\n';" > script.php
 # Generacion de la imagen
 docker build --tag webinar/ejemplo-1 .
 # Ver imagenes disponibles
