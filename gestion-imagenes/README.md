@@ -63,3 +63,14 @@ exit
 # Revisar los contenedores
 docker ps -a | head -n 3
 ```
+
+## Ejemplo 3
+
+Objetivo: Mostrar un proceso que se mantenga en ejecución en un container.
+
+```bash
+docker run -d busybox /bin/sh -c "while true; do echo hello world; sleep 2; done"
+docker ps | head -n 2
+docker logs <container_id>
+docker logs -f <container_id>
+```
