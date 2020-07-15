@@ -46,8 +46,12 @@ docker ps
 
 docker ps -a
 ```
+
+
+
+
 ## Deocker Ingresar al contenedor
-## Docker run -it, 
+## run -it, 
 
 Revisamos que version de SO tenemos
 luegos vemos que version tenemos en el contenedor
@@ -63,7 +67,7 @@ cat /etc/*release*
 ```
 
 ## Deocker detener contenedor
-## Docker stop
+## stop
 
 
 ```
@@ -102,7 +106,7 @@ docker stop nombre_del_contenedor_o_id
 ```
 
 ## Deocker destruir contenedor
-## Docker rm
+## rm
 
 ```
 
@@ -121,7 +125,7 @@ docker rm nombre_contenedor_o_id
 ```
 
 ## Deocker listar y remover imagenes
-## Docker rmi
+## images, rmi
 
 ```
 
@@ -149,18 +153,32 @@ docker rm nombre_contenedor_o_id
 docker rmi ubuntu
 ```
 
+## Docker descargar imagen
+## pull 
+## https://hub.docker.com/
+
 
 ```bash
-FROM httpd:2.4
-COPY ./public-html/ /usr/local/apache2/htdocs/
 
-docker build -t my-apache2
+docker images
 
-docker run -dit --name my-running-app -p 8080:80 my-apache
-docker run httpd
+docker pull php:7-cli
+
+docker images
+
 ```
 
+## Deocker leer contenedores
+## logs
 
+```bash
 
+docker logs --help 
+
+docker ps
+
+docker logs nombre_del_contenedor
+
+```
 
 
