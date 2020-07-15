@@ -1,8 +1,9 @@
-#Primeros comandos
+# Primeros comandos
 
 Se presentan los pirmeros comandos para interactuar con el engine de Docker
 
-##
+## Docker ejecutar contenedores y ver si estan se ejecutaron
+## ps, ps -a, stop, run, run -d
 
 docker run, ejecuta una imagen y si no la encuentra localmente la descarga del registry configurada
 
@@ -38,8 +39,27 @@ CTRL+C para salir
 ```bash
 docker run -d kodekloud/simple-webapp
 ```
+ahora podemos ver que el contenedor esta corriendo
+
 ```bash
 docker ps
+
+docker ps -a
+```
+## Deocker Ingresar al contenedor
+## Docker run -it, 
+
+Revisamos que version de SO tenemos
+luegos vemos que version tenemos en el contenedor
+vemos que estamos usando los comandos dentro del contenedor
+
+```
+cat /etc/*release*
+
+docker run -it ubuntu bash 
+
+cat /etc/*release*
+
 ```
 
 ```bash
