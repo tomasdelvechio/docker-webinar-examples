@@ -3,7 +3,7 @@
 Se presentan los pirmeros comandos para interactuar con el engine de Docker
 
 ## Docker ejecutar contenedores y ver si estan se ejecutaron
-## ps, ps -a, stop, run, run -d
+## ps, ps -a, run, run -d
 
 docker run, ejecuta una imagen y si no la encuentra localmente la descarga del registry configurada
 
@@ -61,6 +61,94 @@ docker run -it ubuntu bash
 cat /etc/*release*
 
 ```
+
+## Deocker detener contenedor
+## Docker stop
+
+
+```
+
+docker run  ubuntu
+# no se ve el contenedor porque termino
+
+docker ps
+
+#corren en background y se mantiene 30 segundos
+docker run -d  ubuntu sleep 30
+
+#podemos ver el conenedor activo, y con el comando sleep 30
+
+docker ps
+
+```
+
+ahora si queremos detener el contenedor antes que termine
+
+```
+
+
+#corren en background y se mantiene 3000 segundos
+docker run -d  ubuntu sleep 3000
+
+#podemos ver el conenedor activo, y con el comando sleep 3000
+
+docker ps
+
+#lo detenemos con el nombre del contenedor  o el id
+
+docker stop nombre_del_contenedor_o_id
+
+
+```
+
+## Deocker destruir contenedor
+## Docker rm
+
+```
+
+docker run -d  ubuntu sleep 3000
+
+docker ps
+
+docker rm nombre_contenedor_o_id
+
+#no se puede porque esta corriendo
+
+docker stop nombre_contenedor_o_id
+
+docker rm nombre_contenedor_o_id
+
+```
+
+## Deocker listar y remover imagenes
+## Docker rmi
+
+```
+
+docker run -d  ubuntu sleep 3000
+
+docker images
+
+
+docker rmi ubuntu
+
+#no se puede porque esta corriendo
+
+docker ps
+
+docker stop nombre_contenedor_o_id
+
+# no se puede, tiene contenedores asociados
+
+docker rmi ubuntu
+
+docker ps
+
+docker rm nombre_contenedor_o_id
+
+docker rmi ubuntu
+```
+
 
 ```bash
 FROM httpd:2.4
