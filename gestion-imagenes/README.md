@@ -74,3 +74,4 @@ docker ps | head -n 2
 docker logs <container_id>
 docker logs -f <container_id>
 ```
+

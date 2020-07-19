@@ -48,8 +48,6 @@ docker ps -a
 ```
 
 
-
-
 ## Deocker Ingresar al contenedor
 ## run -it, 
 
@@ -108,7 +106,7 @@ docker stop nombre_del_contenedor_o_id
 ## Deocker destruir contenedor
 ## rm
 
-```
+```bash
 
 docker run -d  ubuntu sleep 3000
 
