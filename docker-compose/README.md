@@ -62,7 +62,7 @@ A continuación, ingresando a http://localhost:8888 se puede ver la ejecución d
 
 ## Ejemplo 2 - Agregando PDO al contenedor de PHP
 
-Asi como esta el ejemplo 1, no es posible conectarse al contenedor de Mysql desde el de PHP usando PDO (porque no viene instalado).
+Así como esta el ejemplo 1, no es posible conectarse al contenedor de Mysql desde el de PHP usando PDO (porque no viene instalado).
 
 Copiamos el contenido del ejemplo 1 para tomarlo de base:
 
@@ -71,7 +71,7 @@ cp -r ~/workspace/webinar-docker/docker-compose/ejemplo-1 ~/workspace/webinar-do
 cd ~/workspace/webinar-docker/docker-compose/ejemplo-2
 ```
 
-Alli dentro, crearemos un Dockerfile para nuestro nuevo contenedor de PHP (basado en el utilizado en el ejemplo 1), pero agregando el soporte para PDO y PDO MySQL.
+Allí dentro, crearemos un Dockerfile para nuestro nuevo contenedor de PHP (basado en el utilizado en el ejemplo 1), pero agregando el soporte para PDO y PDO MySQL.
 
 Crearemos entonces un archivo `Dockerfile` y escribiremos el siguiente contenido.
 
@@ -100,3 +100,68 @@ docker-compose build # build de todos los servicios que lo requieran
 docker-compose up # inicia el entorno con las imagenes mas actualizadas disponibles
 ```
 
+## Ejemplo 3 - Desplegar un entorno Wordpress
+
+Fuente oficial del ejemplo: 
+
+Wordpress es uno de los CMS mas populares del mundo. Es habitual querer desplegar un entorno para desarrollar un sitio en concreto. A veces puede implicar el editar código, pero también puede ser la construcción del sitio desde la interfaz administrativa del CMS. En cualquier caso, el despliegue requiere del código de la aplicación, con una versión adecuada de PHP, una base de datos MySQL.
+
+```bash
+mkdir -p ~/workspace/webinar-docker/docker-compose/ejemplo-3
+cd ~/workspace/webinar-docker/docker-compose/ejemplo-3
+```
+
+En el directorio del ejemplo, creamos el archivo `docker-compose.yml`con el siguiente contenido:
+
+```yaml
+version: '3.3'
+
+services:
+   db:
+     image: mysql:5.7
+     volumes:
+       - db_data:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: somewordpress
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: wordpress
+       MYSQL_PASSWORD: wordpress
+
+   wordpress:
+     depends_on:
+       - db
+     image: wordpress:latest
+     ports:
+       - "8888:80"
+     restart: always
+     environment:
+       WORDPRESS_DB_HOST: db:3306
+       WORDPRESS_DB_USER: wordpress
+       WORDPRESS_DB_PASSWORD: wordpress
+       WORDPRESS_DB_NAME: wordpress
+
+volumes:
+    db_data: {}
+```
+
+Una vez creado y guardado este archivo, se ejecuta el proyecto:
+
+```bash
+docker-compose up -d
+```
+
+Una vez que finaliza dicho comando, se puede acceder al sitio en http://localhost:8888.
+
+Se puede usar docker-compose para otras tareas, como ver que contenedores están creados para este proyecto, ver logs, etc...
+
+```bash
+docker-compose logs
+docker-compose logs -f
+docker-compose top
+docker-compose ps
+docker-compose stop
+docker-compose start
+docker-compose down
+docker-compose down --volumes
+```
