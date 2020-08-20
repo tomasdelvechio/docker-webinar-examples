@@ -2,7 +2,8 @@
 
 Se presentan los pirmeros comandos para interactuar con el engine de Docker
 
-## Docker ejecutar contenedores y ver si estan se ejecutaron
+## Primeros comandos a 
+## Ejecutar contenedores y ver si estos ya se ejecutaron
 ## ps, ps -a, run, run -d
 
 docker run, ejecuta una imagen y si no la encuentra localmente la descarga del registry configurada
@@ -47,7 +48,7 @@ docker ps
 docker ps -a
 ```
 
-
+## Primeros comandos b
 ## Deocker Ingresar al contenedor
 ## run -it, 
 
@@ -63,7 +64,7 @@ docker run -it ubuntu bash
 cat /etc/*release*
 
 ```
-
+## Primeros comandos c
 ## Deocker detener contenedor
 ## stop
 
@@ -102,7 +103,7 @@ docker stop nombre_del_contenedor_o_id
 
 
 ```
-
+## Primeros comandos d
 ## Deocker destruir contenedor
 ## rm
 
@@ -121,7 +122,7 @@ docker stop nombre_contenedor_o_id
 docker rm nombre_contenedor_o_id
 
 ```
-
+## Primeros comandos e
 ## Deocker listar y remover imagenes
 ## images, rmi
 
@@ -150,7 +151,7 @@ docker rm nombre_contenedor_o_id
 
 docker rmi ubuntu
 ```
-
+## Primeros comandos f
 ## Docker descargar imagen
 ## pull 
 ## https://hub.docker.com/
@@ -165,7 +166,7 @@ docker pull php:7-cli
 docker images
 
 ```
-
+## Primeros comandos g
 ## Deocker leer contenedores
 ## logs
 

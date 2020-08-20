@@ -1,4 +1,4 @@
-## Ejemplos de Tags - Mapeo de puertos - Mapeop de directorios 
+## Ejemplos de Tags - Mapeo de puertos - Mapeo de directorios 
 
 # Mapeo De Puertos
 
