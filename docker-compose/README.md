@@ -9,8 +9,8 @@ Algunas decisiones deben ser tomadas para construir el entorno. ¿Versión de PH
 Se crea un directorio donde se gestionara nuestro proyecto.
 
 ```bash
-mkdir -p ~/workspace/webinar-docker/docker-compose/ejemplo-1
-cd ~/workspace/webinar-docker/docker-compose/ejemplo-1
+mkdir -p ~/webinar/docker-compose/ejemplo-1
+cd ~/webinar/docker-compose/ejemplo-1
 echo "<?php phpinfo();" > index.php
 touch docker-compose.yml
 ```
@@ -67,8 +67,8 @@ Así como esta el ejemplo 1, no es posible conectarse al contenedor de Mysql des
 Copiamos el contenido del ejemplo 1 para tomarlo de base:
 
 ```bash
-cp -r ~/workspace/webinar-docker/docker-compose/ejemplo-1 ~/workspace/webinar-docker/docker-compose/ejemplo-2
-cd ~/workspace/webinar-docker/docker-compose/ejemplo-2
+cp -r ~/webinar/docker-compose/ejemplo-1 ~/webinar/docker-compose/ejemplo-2
+cd ~/webinar/docker-compose/ejemplo-2
 ```
 
 Allí dentro, crearemos un Dockerfile para nuestro nuevo contenedor de PHP (basado en el utilizado en el ejemplo 1), pero agregando el soporte para PDO y PDO MySQL.
@@ -102,13 +102,13 @@ docker-compose up # inicia el entorno con las imagenes mas actualizadas disponib
 
 ## Ejemplo 3 - Desplegar un entorno Wordpress
 
-Fuente oficial del ejemplo: 
+Fuente oficial del ejemplo:
 
 Wordpress es uno de los CMS mas populares del mundo. Es habitual querer desplegar un entorno para desarrollar un sitio en concreto. A veces puede implicar el editar código, pero también puede ser la construcción del sitio desde la interfaz administrativa del CMS. En cualquier caso, el despliegue requiere del código de la aplicación, con una versión adecuada de PHP, una base de datos MySQL.
 
 ```bash
-mkdir -p ~/workspace/webinar-docker/docker-compose/ejemplo-3
-cd ~/workspace/webinar-docker/docker-compose/ejemplo-3
+mkdir -p ~/webinar/docker-compose/ejemplo-3
+cd ~/webinar/docker-compose/ejemplo-3
 ```
 
 En el directorio del ejemplo, creamos el archivo `docker-compose.yml`con el siguiente contenido:

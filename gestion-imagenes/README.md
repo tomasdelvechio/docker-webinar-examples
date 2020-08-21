@@ -7,8 +7,8 @@ Un conjunto de ejemplos sobre como se manejan imagenes en Docker
 Objetivo: Ejecutar un script php con el CLI del lenguaje sin tenerlo instalado en el Host. Para ello se creara una imagen que ejecute dicho contenedor.
 
 ```bash
-mkdir -p ~/workspace/webinar-docker/ejemplo-1/
-cd ~/workspace/webinar-docker/ejemplo-1/
+mkdir -p ~/webinar/construir-imagen/
+cd ~/webinar/construir-imagen/
 nano Dockerfile
 ```
 
@@ -24,7 +24,7 @@ Luego ejecutar los siguientes comandos
 
 ```bash
 # Creacion de un script PHP
-echo "<?php echo 'Hola Mundo desde PHP\n';" > script.php
+echo '<?php echo "Hola Mundo desde PHP\n";' > script.php
 # Generacion de la imagen
 docker build --tag webinar/ejemplo-1 .
 # Ver imagenes disponibles
