@@ -73,5 +73,7 @@ docker run -d busybox /bin/sh -c "while true; do echo hello world; sleep 2; done
 docker ps | head -n 2
 docker logs <container_id>
 docker logs -f <container_id>
+docker stop <container_id>
+docker rm <container_id>
 ```
 
